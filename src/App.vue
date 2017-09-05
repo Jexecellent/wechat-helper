@@ -1,0 +1,45 @@
+<template>
+  <div class="wrap">
+    <heads></heads>
+    <tab></tab>
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+import Heads from './components/base/Heads'
+import Tab from "./components/base/tab"
+export default {
+  components: {
+    Heads ,
+    Tab
+  }
+}
+</script>
+
+<style>
+  body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,
+  pre,code,form,fieldset,legend,input,button,textarea,
+  p,blockquote,th,td { margin:0; padding:0; }
+  body { background:#efeff4; color:#555; font-size:14px; font-family: 微软雅黑,Verdana, Arial, Helvetica, sans-serif; }
+  td,th,caption { font-size:14px; }
+  h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+  address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+  a { color:#555; text-decoration:none; }
+  a:hover {color:#f40;}
+  img { border:none; display: block;vertical-align: middle;}
+  ol,ul,li { list-style:none; }
+  input, textarea, select, button { font:12px 微软雅黑,Verdana,Helvetica,Arial,sans-serif; outline: none ;
+    padding : .03rem;}
+  table { border-collapse:collapse; }
+  html {overflow-y: scroll;font-size: 100px;} 
+  .clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+  .clearfix { *zoom:1; }
+  .span-btn {   
+    padding: .04rem .12rem;
+    background:#51A2FE;
+    border-radius: .04rem;
+    color :#fff;
+    display: inline-block;
+  }
+</style>
