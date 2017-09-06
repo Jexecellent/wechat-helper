@@ -107,7 +107,7 @@
 				</div>
 				<div class="picker">
 					<label>当前比赛</label>
-					<label>nfiownweie</label>	
+					<label>nfiownweie</label>
 				</div>
 				<div class="btn">
 					<span class="span-btn" @click="">发起比赛活动</span>
@@ -117,12 +117,18 @@
 	</div>
 </template>
 <script>
-	//import _ from "lodash"
-	import MyGroups from '../group'
+  //import _ from "lodash"
+  import MyGroups from '../group'
+  import { mapGetters , mapMutations } from 'vuex'
+  import Plugins  from '../../utiles'
 	export default {
-		components:{	
+		components:{
 			MyGroups
-		},
+    },
+    mixins:[Plugins], // 混合 在组件里混入其他配置 相当于对象的合并
+    created() {
+      console.log(this.getApi(1)) // 在组件载入前 先获取数据确实当前群的第一项是‘群1’或者是其他群
+    },
 		data() {
 			return {
 				addKey: '' ,
@@ -211,36 +217,52 @@
 			}
 		},
 		computed:{
-			curGroup() {
-				return this.init() 
-			}
+      /**
+       * mapGetters 方法介绍：
+       * @note--  注意这些方法的书写位置 mapGetters 只能放在 computed 里
+       * vuex提供的工具方法
+       * 等价于  curGroup(){return this.$store.getters.getCurGroup }
+       * 获取vuex state中管理的curGroup数据
+       */
+			...mapGetters({
+        curGroup:'getCurGroup'
+      })
 		},
 		methods:{
 			groupClick(val) {
-				this.curGroup = val.index 
+        this.updataCurGroup(val)
 			},
 			addOnekey(val) {
 				let o = {
 					status : true ,
-					word : val 
+					word : val
 				}
 				this.setList['4'].content.push(o)
-				this.addKey = '' 
+				this.addKey = ''
 			},
 			saveList(val) {
 				console.log(val)
 			},
 			delKey(idx) {
 				this.setList['4'].content.splice(idx,1)
-			},
-			init() {
-				//console.log(Object.keys(this.groupList)[0])
-				return Object.keys(this.groupList)[0]  // ['1','2','3','4','5']
-			}
-		}/*,
+      },
+      /**
+       * mapMutations 方法介绍 ：
+       * @note--  注意这些方法的书写位置 mapMutations 和 mapActions 只能放在 methods 里
+       * vuex提供的工具方法
+       * 等价于  updataCurGroup(){return this.$store.commit('updataCurGroup',someVal) }
+       * 修改vuex state中管理的curGroup数据
+       * 因为vuex state中的数据只能通过mutations来修改 所以这里要映射mutations的方法
+       * 这么写是一种简写的方式  可以直接使用this.updataCurGroup(someVal) 这种方式修改state数据
+       *
+       */
+      ...mapMutations([
+        'updataCurGroup'
+      ])
+		},
 		mounted() {
-			this.init()
-		}*/
+			//console.log(this.$store)
+		}
 	}
 </script>
 <style scoped>
@@ -258,7 +280,7 @@
 		line-height: 0.5rem;
 		padding-left: .1rem;
 		font-weight: bold;
-		position: relative; 
+		position: relative;
 	}
 	h4:before {
 		content: '';
