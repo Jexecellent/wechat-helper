@@ -68,7 +68,7 @@
 					<label>grnqpingibpqnb</label>
 				</div>
 				<div class="btn">
-					<span class="span-btn" @click="">发起签到活动</span>
+					<span class="span-btn">发起签到活动</span>
 				</div>
 			</div>
 			<div class="gaoji-group">
@@ -110,7 +110,7 @@
 					<label>nfiownweie</label>
 				</div>
 				<div class="btn">
-					<span class="span-btn" @click="">发起比赛活动</span>
+					<span class="span-btn">发起比赛活动</span>
 				</div>
 			</div>
 		</div>
