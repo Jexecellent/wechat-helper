@@ -25,7 +25,7 @@
 						<input  type="text" placeholder="添加关键字" v-model="addKey"/><span class="span-btn" @click="addOnekey(addKey)">添加</span>
 					</div>
 					<div class="keys-con">
-						<div class="keys-list" v-for="(item,index) in setList['4'].content">
+						<div class="keys-list" v-for="(item,index) in setList['4'].content" :key="index">
 							<input name="checkbox" type="checkbox" v-model="item.status">
 							<label>{{item.word}}</label>
 							<span class="delCheckbox" @click="delKey(index)" v-show="isShow">×</span>
