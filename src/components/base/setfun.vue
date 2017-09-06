@@ -230,7 +230,7 @@
 		},
 		methods:{
 			groupClick(val) {
-        this.updataCurGroup(val)
+        this.updataCurGroup(val) // curGroup = val.index  修改curGroup都得是index属性
 			},
 			addOnekey(val) {
 				let o = {
