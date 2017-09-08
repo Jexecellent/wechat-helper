@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from  './store'
 Vue.config.productionTip = false
-
+// 去掉eslint审查代码
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
