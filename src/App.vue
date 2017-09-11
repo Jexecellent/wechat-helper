@@ -1,19 +1,24 @@
 <template>
   <div class="wrap">
-    <heads></heads>
-    <tab></tab>
+    <div>
+        <heads></heads>
+        <tab></tab>
+    </div>
     <router-view></router-view>
+    <!-- <login></login> -->
   </div>
 </template>
 
 <script>
 // 一个注释 
-import Heads from './components/base/Heads'
-import Tab from "./components/base/tab"
+ import Heads from './components/base/Heads'
+ import Tab from "./components/base/tab"
+//import Login from "./components/login"
 export default {
   components: {
-    Heads ,
-    Tab
+     Heads ,
+    Tab,
+   // Login
   }
 }
 </script>
@@ -34,6 +39,8 @@ export default {
     padding : .03rem;}
   table { border-collapse:collapse; }
   html {overflow-y: scroll;font-size: 100px;} 
+  body,html {width:100%;height:100%;}
+  .wrap{width:100%;height:100%;}
   .clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
   .clearfix { *zoom:1; }
   .span-btn {   
@@ -43,4 +50,7 @@ export default {
     color :#fff;
     display: inline-block;
   }
+  /* input::-webkit-input-placeholder{
+　　  color: #fff;
+　} */
 </style>
