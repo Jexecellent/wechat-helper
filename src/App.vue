@@ -7,6 +7,7 @@
 </template>
 
 <script>
+// 一个注释 
 import Heads from './components/base/Heads'
 import Tab from "./components/base/tab"
 export default {
