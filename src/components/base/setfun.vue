@@ -124,113 +124,113 @@
 	export default {
 		components:{
 			MyGroups
-    },
-    mixins:[Plugins], // 混合 在组件里混入其他配置 相当于对象的合并
-    created() {
-      console.log(this.getApi(1)) // 在组件载入前 先获取数据确实当前群的第一项是‘群1’或者是其他群
-    },
+    	},
+		mixins:[Plugins], // 混合 在组件里混入其他配置 相当于对象的合并
+		created() {
+			console.log(this.getApi(1)) // 在组件载入前 先获取数据确实当前群的第一项是‘群1’或者是其他群
+		},
 		data() {
 			return {
 				addKey: '' ,
 				groupList:  {
-			        "1": {
-			            "id": 5,
-			            "index": 1,
-			            "numbers": "3",
-			            "name": "测试群😎"
-			        },
-			        "2": {
-			            "id": 13,
-			            "index": 2,
-			            "numbers": "3",
-			            "name": "MjIy44CQ5rWL6K+V5Yqp5omLQnVn5Y+N6aaIMuOAkQ=="
-			        },
-			        "3": {
-			            "id": 15,
-			            "index": 3,
-			            "numbers": "32",
-			            "name": "5rWL6K+V5Yqp5omLQnVn5Y+N6aaIMw=="
-			        },
-			        "4": {
-			            "id": 16,
-			            "index": 4,
-			            "numbers": "3",
-			            "name": "44CQ5rWL6K+V5Yqp5omLQnVn5Y+N6aaINOOAkQ=="
-			        },
-			        "5": {
-			            "id": 42,
-			            "index": 5,
-			            "numbers": "3",
-			            "name": "5rWL6K+V5Yqp5omLQnVn5Y+N6aaINQ=="
-			        }
-			    },
-			    isShow : false ,
-			    setList :  {
-			        "1": {
-			        	"content": "欢迎新人@#0加入本群！我们一起愉快地玩耍吧~[耶]",
-        	            "status": true,
-        	            "type": 1
-			        },
-			        "2": {
-			            "content": "请大家遵守群规，争做文明人~[耶]",
-			            "status": true,
-			            "type": 2
-			        },
-			        "3": {
-			            "content": "昵称为【#0】，微信号为【#1】的用户退出了您的【#2】群，请您关注.",
-			            "status": true,
-			            "type": 3
-			        },
-			        "4": {
-			            "content": [
-			                {
-			                    "word": "呜呜呜",
-			                    "status": true
-			                },
-			                {
-			                    "word": "去去去",
-			                    "status": true
-			                },
-			                {
-			                    "word": "qqqq",
-			                    "status": true
-			                },
-			                {
-			                    "word": "eeeee",
-			                    "status": true
-			                }
-			            ],
-			            "type": 4
-			        },
-			        "5": {
-			            "end_date": "2017-11-01",
-			            "start_date": "2017-10-01",
-			            "start_time": "16:10",
-			            "end_time": "21:10",
-			            "status": true,
-			            "type": 5,
-			            "desc": "10月01日-11月01日",
-			            "cancel": 1
-			        },
-			        "key_word": "@01848ad3 签到"
-			    }
+					"1": {
+						"id": 5,
+						"index": 1,
+						"numbers": "3",
+						"name": "测试群😎"
+					},
+					"2": {
+						"id": 13,
+						"index": 2,
+						"numbers": "3",
+						"name": "MjIy44CQ5rWL6K+V5Yqp5omLQnVn5Y+N6aaIMuOAkQ=="
+					},
+					"3": {
+						"id": 15,
+						"index": 3,
+						"numbers": "32",
+						"name": "5rWL6K+V5Yqp5omLQnVn5Y+N6aaIMw=="
+					},
+					"4": {
+						"id": 16,
+						"index": 4,
+						"numbers": "3",
+						"name": "44CQ5rWL6K+V5Yqp5omLQnVn5Y+N6aaINOOAkQ=="
+					},
+					"5": {
+						"id": 42,
+						"index": 5,
+						"numbers": "3",
+						"name": "5rWL6K+V5Yqp5omLQnVn5Y+N6aaINQ=="
+					}
+				},
+				isShow : false ,
+				setList :  {
+					"1": {
+						"content": "欢迎新人@#0加入本群！我们一起愉快地玩耍吧~[耶]",
+						"status": true,
+						"type": 1
+					},
+					"2": {
+						"content": "请大家遵守群规，争做文明人~[耶]",
+						"status": true,
+						"type": 2
+					},
+					"3": {
+						"content": "昵称为【#0】，微信号为【#1】的用户退出了您的【#2】群，请您关注.",
+						"status": true,
+						"type": 3
+					},
+					"4": {
+						"content": [
+							{
+								"word": "呜呜呜",
+								"status": true
+							},
+							{
+								"word": "去去去",
+								"status": true
+							},
+							{
+								"word": "qqqq",
+								"status": true
+							},
+							{
+								"word": "eeeee",
+								"status": true
+							}
+						],
+						"type": 4
+					},
+					"5": {
+						"end_date": "2017-11-01",
+						"start_date": "2017-10-01",
+						"start_time": "16:10",
+						"end_time": "21:10",
+						"status": true,
+						"type": 5,
+						"desc": "10月01日-11月01日",
+						"cancel": 1
+					},
+					"key_word": "@01848ad3 签到"
+				}
 			}
 		},
 		computed:{
-      /**
-       * mapGetters 方法介绍：
-       * @note--  注意这些方法的书写位置 mapGetters 只能放在 computed 里
-       * vuex提供的工具方法
-       * 等价于  curGroup(){return this.$store.getters.getCurGroup }
-       * 获取vuex state中管理的curGroup数据
-       */
+			/**
+			* mapGetters 方法介绍：
+			* @note--  注意这些方法的书写位置 mapGetters 只能放在 computed 里
+			* vuex提供的工具方法
+			* 等价于  curGroup(){return this.$store.getters.getCurGroup }
+			* 获取vuex state中管理的curGroup数据
+			*/
 			...mapGetters({
-        curGroup:'getCurGroup'
-      })
+				curGroup:'getCurGroup'
+			})
 		},
 		methods:{
 			groupClick(val) {
-        this.updataCurGroup(val) // curGroup = val.index  修改curGroup都得是index属性
+				this.updataCurGroup(val) // curGroup = val.index  修改curGroup都得是index属性
 			},
 			addOnekey(val) {
 				let o = {
@@ -245,20 +245,20 @@
 			},
 			delKey(idx) {
 				this.setList['4'].content.splice(idx,1)
-      },
-      /**
-       * mapMutations 方法介绍 ：
-       * @note--  注意这些方法的书写位置 mapMutations 和 mapActions 只能放在 methods 里
-       * vuex提供的工具方法
-       * 等价于  updataCurGroup(){return this.$store.commit('updataCurGroup',someVal) }
-       * 修改vuex state中管理的curGroup数据
-       * 因为vuex state中的数据只能通过mutations来修改 所以这里要映射mutations的方法
-       * 这么写是一种简写的方式  可以直接使用this.updataCurGroup(someVal) 这种方式修改state数据
-       *
-       */
-      ...mapMutations([
-        'updataCurGroup'
-      ])
+			},
+			/**
+			* mapMutations 方法介绍 ：
+			* @note--  注意这些方法的书写位置 mapMutations 和 mapActions 只能放在 methods 里
+			* vuex提供的工具方法
+			* 等价于  updataCurGroup(){return this.$store.commit('updataCurGroup',someVal) }
+			* 修改vuex state中管理的curGroup数据
+			* 因为vuex state中的数据只能通过mutations来修改 所以这里要映射mutations的方法
+			* 这么写是一种简写的方式  可以直接使用this.updataCurGroup(someVal) 这种方式修改state数据
+			*
+			*/
+			...mapMutations([
+				'updataCurGroup'
+			])
 		},
 		mounted() {
 			//console.log(this.$store)
