@@ -68,7 +68,7 @@ export default {
 		display: flex ;
 		flex-direction :row  ;
 		justify-content : center ;
-		margin-top: .05rem ;
+		margin-top: .1rem ;
 	}
 	.group div {
 		flex : 1;

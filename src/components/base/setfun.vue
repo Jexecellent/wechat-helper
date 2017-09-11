@@ -382,7 +382,7 @@
 		position: relative;
 		margin-left: .3rem;
 		text-align: left;
-		padding:0 .1rem;
+		padding:0 .05rem;
 	}
 	.picker button:after {
 		content: '';
