@@ -262,6 +262,11 @@
 		},
 		mounted() {
 			//console.log(this.$store)
+			this.$http.get('/api').then(res=>{
+				console.log('res...',res)
+			},err=>{
+				console.log('err...',err)
+			})
 		}
 	}
 </script>
