@@ -380,27 +380,7 @@
 		margin-left: .2rem;
 	}
 	.picker button{
-		flex-grow:1;
-		border:1px solid #ddd;
-		background-color: #fff;
-		height:.28rem;
-		position: relative;
 		margin-left: .3rem;
-		text-align: left;
-		padding:0 .05rem;
-	}
-	.picker button:after {
-		content: '';
-		position: absolute;
-		right: .1rem;
-		top:.1rem;
-	   	display: inline-block;
-	   	width: .05rem;
-	   	height: .05rem;
-	   	border-left: 1px solid #555;
-	   	border-bottom: 1px solid #555;
-	   	transform: rotate(-45deg);
-	    -webkit-transform: rotate(-45deg);
 	}
 	.picker.n-ml button{
 		margin-left: .1rem;

@@ -6,6 +6,7 @@ import Getpwd from './components/getpwd'
 import Account from './components/base/account'
 import Setfun from './components/base/setfun'
 import Report from './components/base/report'
+import Yingfen from './components/base/yingfen'
 import Setmember from './components/base/setmember'
 import Kefu from './components/base/kefu'
 import About from './components/about'
@@ -40,7 +41,13 @@ export default new VueRouter({
 		},
 		{
 			path : '/report',
-			component : Report
+			component : Report,
+			children : [
+				{
+					path: 'yingfen',
+					component: Yingfen
+				}
+			]
 		},
 		{
 			path : '/setmember' ,

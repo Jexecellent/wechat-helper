@@ -27,7 +27,7 @@ export default {
   body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,
   pre,code,form,fieldset,legend,input,button,textarea,
   p,blockquote,th,td { margin:0; padding:0; }
-  body { background:#efeff4; color:#555; font-size:14px; font-family: 微软雅黑,Verdana, Arial, Helvetica, sans-serif; }
+  body { background:#efeff4; color:#555; font-size:12px; font-family: 微软雅黑,Verdana, Arial, Helvetica, sans-serif; }
   td,th,caption { font-size:14px; }
   h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
   address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
@@ -50,6 +50,28 @@ export default {
     color :#fff;
     display: inline-block;
   }
+  .picker button{
+		flex-grow:1;
+		border:1px solid #ddd;
+		background-color: #fff;
+		height:.28rem;
+		position: relative;
+		text-align: left;
+		padding:0 .05rem;
+	}
+	.picker button:after {
+		content: '';
+		position: absolute;
+		right: .1rem;
+		top:.1rem;
+	   	display: inline-block;
+	   	width: .05rem;
+	   	height: .05rem;
+	   	border-left: 1px solid #555;
+	   	border-bottom: 1px solid #555;
+	   	transform: rotate(-45deg);
+	    -webkit-transform: rotate(-45deg);
+	}
   /* input::-webkit-input-placeholder{
 　　  color: #fff;
 　} */
