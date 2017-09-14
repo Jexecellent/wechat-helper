@@ -3,6 +3,14 @@
 		<my-groups @on-change-group="groupClick($event)"></my-groups>
 		<div class="setbox base-set">
 			<h4>群{{curGroup}} 基础功能设置</h4>
+      <!-- 引入vux组件库 -->
+      <group>
+          <cell title="title" value="value"></cell>
+      </group>
+      <!-- 日期事件使用案例 -->
+      <group >
+        <datetime format="YYYY-MM-DD "></datetime>
+      </group>
 			<div class="base-group">
 				<div class="member-set" >
 					<label><input type="checkbox" name="member" v-model="setList['1'].status"/>新人欢迎语：</label>
@@ -120,10 +128,14 @@
   //import _ from "lodash"
   import MyGroups from '../group'
   import { mapGetters , mapMutations } from 'vuex'
+  import { Group, Cell , Datetime  } from 'vux'
   import Plugins  from '../../utiles'
 	export default {
 		components:{
-			MyGroups
+      MyGroups,
+      Group,
+      Cell ,
+      Datetime
     	},
 		mixins:[Plugins], // 混合 在组件里混入其他配置 相当于对象的合并
 		created() {
@@ -262,11 +274,11 @@
 		},
 		mounted() {
 			//console.log(this.$store)
-			this.$http.get('/api').then(res=>{
+			/* this.$http.get('/api').then(res=>{
 				console.log('res...',res)
 			},err=>{
 				console.log('err...',err)
-			})
+			}) */
 		}
 	}
 </script>
