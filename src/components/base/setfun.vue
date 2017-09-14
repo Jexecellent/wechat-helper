@@ -8,10 +8,20 @@
           <cell title="title" value="value"></cell>
       </group>
       <!-- 日期事件使用案例 -->
-      <group >
-        <datetime format="YYYY-MM-DD "></datetime>
+      <group title='日期时间组件展示'>
+          <datetime format="YYYY-MM-DD " v-model="datatime" placeholder="请选择时间"  :min-year='2015' cancel-text='hha'></datetime>
       </group>
+     <!--  <group>
+        <scroller lock-y :scrollbar-x='false'>
+          <div class="box1">
+            <div class="box1-item" v-for="i in 7"><span>{{' ' + i + ' '}}</span></div>
+          </div>
+        </scroller>
+      </group> -->
 			<div class="base-group">
+        <group>
+          <x-textarea title="新人欢迎语 :" v-model="value" :show-counter="false" :rows="1" autosize></x-textarea>
+        </group>
 				<div class="member-set" >
 					<label><input type="checkbox" name="member" v-model="setList['1'].status"/>新人欢迎语：</label>
 					<input class="set-inp" type="text" placeholder="请添加群新人欢迎语!" v-model="setList['1'].content" name="member-area">
@@ -128,18 +138,20 @@
   //import _ from "lodash"
   import MyGroups from '../group'
   import { mapGetters , mapMutations } from 'vuex'
-  import { Group, Cell , Datetime  } from 'vux'
+  import { Group, Cell , Datetime , Scroller ,XTextarea   } from 'vux'
   import Plugins  from '../../utiles'
 	export default {
 		components:{
       MyGroups,
       Group,
       Cell ,
-      Datetime
-    	},
+      Datetime,
+      Scroller,
+      XTextarea
+    },
 		mixins:[Plugins], // 混合 在组件里混入其他配置 相当于对象的合并
 		created() {
-			console.log(this.getApi(1)) // 在组件载入前 先获取数据确实当前群的第一项是‘群1’或者是其他群
+			console.log(this.getApi(1)) // 在组件载入前 先获取数据确认当前群的第一项是‘群1’或者是其他群
 		},
 		data() {
 			return {
@@ -225,9 +237,16 @@
 						"cancel": 1
 					},
 					"key_word": "@01848ad3 签到"
-				}
+        },
+        datatime:'',
+        value: ''
 			}
-		},
+    },
+    watch:{
+      datatime() {
+        console.log(this.datatime);
+      }
+    },
 		computed:{
 			/**
 			* mapGetters 方法介绍：
@@ -283,7 +302,21 @@
 	}
 </script>
 <style scoped>
-
+  .box1 {
+  height: 100px;
+  position: relative;
+  width: 1490px;
+}
+.box1-item {
+  width: 200px;
+  height: 100px;
+  background-color: #ccc;
+  display:inline-block;
+  margin-left: 15px;
+  float: left;
+  text-align: center;
+  line-height: 100px;
+}
 	.setfun-wrap {
 		background: #fff ;
 	}
