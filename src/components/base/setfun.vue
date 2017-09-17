@@ -8,7 +8,7 @@
           <cell title="title" value="value"></cell>
       </group>
       <!-- 日期事件使用案例 -->
-      <group title='日期时间组件展示'>
+      <group>
           <datetime format="YYYY-MM-DD " v-model="datatime" placeholder="请选择时间"  :min-year='2015' cancel-text='hha'></datetime>
       </group>
      <!--  <group>
@@ -64,7 +64,10 @@
 				</div>
 				<div class="picker">
 					<label>签到开始</label>
-					<button class="timepicker">2017-09-05</button>
+					<div  class="timepicker" >
+						<datetime format="YYYY-MM-DD " v-model="datatime" placeholder="请选择时间"  :min-year='2015' cancel-text='hha'></datetime>
+					</div>
+					
 				</div>
 				<div class="picker">
 					<label>签到结束</label>
@@ -293,11 +296,11 @@
 		},
 		mounted() {
 			//console.log(this.$store)
-			/* this.$http.get('/api').then(res=>{
+			this.$http.get('http://testhuodong.xiaoxiongyouxi.com:82/api/common/group').then(res=>{
 				console.log('res...',res)
 			},err=>{
 				console.log('err...',err)
-			}) */
+			})
 		}
 	}
 </script>
