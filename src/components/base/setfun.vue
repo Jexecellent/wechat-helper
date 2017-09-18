@@ -8,8 +8,13 @@
         <cell title="title" value="value"></cell>
       </group>
       <!-- 日期事件使用案例 -->
+<<<<<<< HEAD
       <group title='日期时间组件展示'>
         <datetime format="YYYY-MM-DD " v-model="datatime" placeholder="请选择时间" :min-year='2015' cancel-text='hha'></datetime>
+=======
+      <group>
+          <datetime format="YYYY-MM-DD " v-model="datatime" placeholder="请选择时间"  :min-year='2015' cancel-text='hha'></datetime>
+>>>>>>> 74db9023fef9b54f1ca5f7f1282e1820b7232ac9
       </group>
       <!--  <group>
           <scroller lock-y :scrollbar-x='false'>
@@ -22,6 +27,7 @@
         <group>
           <x-textarea title="新人欢迎语 :" v-model="value" :show-counter="false" :rows="1" autosize></x-textarea>
         </group>
+<<<<<<< HEAD
         <div class="member-set">
           <label><input type="checkbox" name="member" v-model="setList['1'].status" />新人欢迎语：</label>
           <input class="set-inp" type="text" placeholder="请添加群新人欢迎语!" v-model="setList['1'].content" name="member-area">
@@ -134,6 +140,122 @@
       </div>
     </div>
   </div>
+=======
+				<div class="member-set" >
+					<label><input type="checkbox" name="member" v-model="setList['1'].status"/>新人欢迎语：</label>
+					<input class="set-inp" type="text" placeholder="请添加群新人欢迎语!" v-model="setList['1'].content" name="member-area">
+				</div>
+				<div class="member-set">
+					<label><input type="checkbox" name="member" v-model="setList['2'].status" />新人进群自动发群规：</label>
+					<textarea  placeholder="请添加群规" class="roules-area set-inp" rows='3' v-model="setList['2'].content">请大家遵守群规，争做文明人~[耶]</textarea>
+				</div>
+				<div class="member-set">
+					<label><input type="checkbox" v-model="setList['3'].status"/>退群提醒：有人退群时，单发微信消息给我</label>
+				</div>
+				<div class="member-keys">
+					<h5>房费红包关键字</h5>
+					<div class="key-set" >
+						<span @click="isShow = !isShow">房费红包关键字设置</span>
+						<span>房费红包统计</span>
+					</div>
+					<div class="add-key" v-show="isShow">
+						<input  type="text" placeholder="添加关键字" v-model="addKey"/><span class="span-btn" @click="addOnekey(addKey)">添加</span>
+					</div>
+					<div class="keys-con">
+						<div class="keys-list" v-for="(item,index) in setList['4'].content" :key="index">
+							<input name="checkbox" type="checkbox" v-model="item.status">
+							<label>{{item.word}}</label>
+							<span class="delCheckbox" @click="delKey(index)" v-show="isShow">×</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="btn">
+				<span class="span-btn" @click="saveList(setList)">保存设置</span>
+			</div>
+		</div>
+		<div class="setbox gaoji-set">
+			<h4>群{{curGroup}} 高级功能设置</h4>
+			<div class="gaoji-group">
+				<div class="huodong-set" >
+					<span>签到活动设置</span>
+					<span>签到统计信息</span>
+				</div>
+				<div class="picker">
+					<label>签到开始</label>
+					<div  class="timepicker" >
+						<datetime format="YYYY-MM-DD " v-model="datatime" placeholder="请选择时间"  :min-year='2015' cancel-text='hha'></datetime>
+					</div>
+					
+				</div>
+				<div class="picker">
+					<label>签到结束</label>
+					<button class="timepicker">2017-09-05</button>
+				</div>
+				<div class="picker n-ml">
+					<label>签到时段</label>
+					<span>每日</span>
+					<button class="timepicker">12:50</button>
+					<span>到</span>
+					<button class="timepicker">15:50</button>
+				</div>
+				<div class="picker">
+					<label>签到关键字</label>
+					<label>gjiwgipwgnipwg</label>
+				</div>
+				<div class="picker">
+					<label>进行中签到</label>
+					<label>grnqpingibpqnb</label>
+				</div>
+				<div class="btn">
+					<span class="span-btn">发起签到活动</span>
+				</div>
+			</div>
+			<div class="gaoji-group">
+				<div class="huodong-set" >
+					<span>比赛活动设置</span>
+					<span>比赛统计信息</span>
+				</div>
+				<div class="picker">
+					<label>报名开始</label>
+					<button class="timepicker">2017-09-05</button>
+				</div>
+				<div class="picker">
+					<label>报名结束</label>
+					<button class="timepicker">2017-09-05</button>
+				</div>
+				<div class="picker">
+					<label>比赛开始</label>
+					<button class="timepicker">2017-09-05</button>
+				</div>
+				<div class="picker">
+					<label>比赛游戏</label>
+					<button class="selectpicker">决战血流</button>
+				</div>
+				<div class="picker n-ml">
+					<label>对局人数</label>
+					<span><input type="radio" name="playerNum" v-model="setList['5'].player_num"/>4人</span>
+					<span><input type="radio" name="playerNum" v-model="setList['5'].player_num"/>3人</span>
+				</div>
+				<div class="picker n-ml">
+					<label>比赛轮数</label>
+					<span><input type="radio" name="round" v-model="setList['5'].round"/>单轮</span>
+					<span><input type="radio" name="round" v-model="setList['5'].round"/>两轮</span>
+				</div>
+				<div class="picker">
+					*您可以根据规则选择4人或3人，一般麻将类为4人。
+				</div>
+				<div class="picker">
+					<label>当前比赛</label>
+					<label>nfiownweie</label>
+				</div>
+				<div class="btn">
+					<span class="span-btn">发起比赛活动</span>
+				</div>
+			</div>
+		</div>
+	</div>
+>>>>>>> 74db9023fef9b54f1ca5f7f1282e1820b7232ac9
 </template>
 <script>
 //import _ from "lodash"
@@ -275,6 +397,7 @@ export default {
     saveList(val) {
       console.log(val)
     },
+<<<<<<< HEAD
     delKey(idx) {
       this.setList['4'].content.splice(idx, 1)
     },
@@ -301,6 +424,61 @@ export default {
     }) */
   }
 }
+=======
+		computed:{
+			/**
+			* mapGetters 方法介绍：
+			* @note--  注意这些方法的书写位置 mapGetters 只能放在 computed 里
+			* vuex提供的工具方法
+			* 等价于  curGroup(){return this.$store.getters.getCurGroup }
+			* 获取vuex state中管理的curGroup数据
+			*/
+			...mapGetters({
+				curGroup:'getCurGroup'
+			})
+		},
+		methods:{
+			groupClick(val) {
+				this.updataCurGroup(val) // curGroup = val.index  修改curGroup都得是index属性
+			},
+			addOnekey(val) {
+				let o = {
+					status : true ,
+					word : val
+				}
+				this.setList['4'].content.push(o)
+				this.addKey = ''
+			},
+			saveList(val) {
+				console.log(val)
+			},
+			delKey(idx) {
+				this.setList['4'].content.splice(idx,1)
+			},
+			/**
+			* mapMutations 方法介绍 ：
+			* @note--  注意这些方法的书写位置 mapMutations 和 mapActions 只能放在 methods 里
+			* vuex提供的工具方法
+			* 等价于  updataCurGroup(){return this.$store.commit('updataCurGroup',someVal) }
+			* 修改vuex state中管理的curGroup数据
+			* 因为vuex state中的数据只能通过mutations来修改 所以这里要映射mutations的方法
+			* 这么写是一种简写的方式  可以直接使用this.updataCurGroup(someVal) 这种方式修改state数据
+			*
+			*/
+			...mapMutations([
+				'updataCurGroup'
+			])
+		},
+		mounted() {
+			//console.log(this.$store)
+			this.$http.get('http://testhuodong.xiaoxiongyouxi.com:82/api/common/group').then(res=>{
+				console.log('res...',res)
+			},err=>{
+				console.log('err...',err)
+			})
+		}
+	}
+>>>>>>> 74db9023fef9b54f1ca5f7f1282e1820b7232ac9
 </script>
 <style scoped>
 .box1 {
